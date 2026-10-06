@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SouArt Studio — Tatuagem, piercing e cursos em Juiz de Fora (prévia Kodra)</title>
+<meta name="description" content="Prévia de site criada pela Kodra para o SouArt Studio — tatuagem, piercing e curso presencial de tatuagem no Centro de Juiz de Fora/MG.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#efece6">
+<link rel="preload" href="assets/syne-extrabold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="img/sabado.webp" as="image">
+<style>
+@font-face{font-family:"Syne";src:url(assets/syne-extrabold.woff) format("woff");font-weight:800;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(assets/dmsans-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(assets/dmsans-italic.woff) format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(assets/dmsans-semibold.woff) format("woff");font-weight:600;font-style:normal;font-display:swap}
+:root{
+  --bg:#efece6;--ink:#161616;--teal:#12827e;--teal-d:#0d5f5c;--pink:#e2426d;--skin:#ecd2bb;--gray:#6c6a65;--line:rgba(22,22,22,.14);
+  --strip:34px;--gut:clamp(18px,4.4vw,70px);--r:22px;
+  --disp:"Syne","Arial Black",sans-serif;--body:"DM Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding-top:var(--strip);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,figure,blockquote,ul{margin:0;padding:0}
+ul{list-style:none}
+::selection{background:var(--pink);color:#fff}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-stopped{overflow:clip}
+
+.kodra{position:fixed;inset:0 0 auto 0;height:var(--strip);z-index:90;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 var(--gut);font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.kodra a{text-decoration:none;opacity:.7}
+.kodra a:hover{opacity:1}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:#fff;transition:transform .25s,background .25s,color .25s;cursor:pointer}
+.pill:hover{transform:translateY(-3px)}
+.pill--pink{background:var(--pink);border-color:var(--pink)}
+.pill--ghost{background:transparent;color:var(--ink)}
+.pill--white{background:#fff;border-color:#fff;color:var(--teal-d)}
+.pill svg{width:18px;height:18px;flex:none}
+
+/* topo */
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut)}
+.logo{font-family:var(--disp);font-weight:800;font-size:22px;text-decoration:none;letter-spacing:-.02em}
+.logo i{font-style:normal;color:var(--pink)}
+.nav{display:flex;gap:clamp(14px,2.4vw,34px);align-items:center}
+.nav a{font-weight:600;font-size:15px;text-decoration:none}
+.nav a:not(.pill):hover{color:var(--teal)}
+.nav .pill{padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,6.4fr) minmax(0,5fr);gap:clamp(20px,4vw,70px);align-items:center;padding:clamp(18px,4vh,54px) var(--gut) clamp(50px,8vw,110px)}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(44px,7.3vw,150px);line-height:.9;letter-spacing:-.045em}
+.hero h1 .sou{color:var(--teal);display:block}
+.swap{display:block;position:relative;height:.98em;overflow:hidden}
+.swap span{position:absolute;left:0;top:0;white-space:nowrap}
+.swap span:last-child{color:var(--pink)}
+.hero__lede{font-size:clamp(17px,1.5vw,21px);max-width:44ch;margin:clamp(18px,2.6vw,34px) 0 clamp(20px,2.6vw,32px)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px}
+.collage{position:relative;aspect-ratio:10/11;max-height:74svh;justify-self:end;width:100%}
+.card{position:absolute;border-radius:var(--r);overflow:hidden;box-shadow:0 22px 50px -22px rgba(0,0,0,.45);background:#ccc}
+.card img{width:100%;height:100%;object-fit:cover}
+.card--a{inset:0 10% 8% 8%;transform:rotate(2.2deg)}
+.card--b{width:44%;aspect-ratio:3/4;left:-4%;bottom:0;transform:rotate(-5deg);border:6px solid var(--bg)}
+.sticker{position:absolute;right:-2%;top:6%;z-index:3;background:var(--pink);color:#fff;font-weight:600;font-size:15px;line-height:1.25;padding:12px 18px;border-radius:999px;transform:rotate(6deg);box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:0 var(--gut)}
+.facts div{padding:clamp(16px,2.2vw,30px) clamp(10px,2vw,30px);border-left:2px solid var(--ink)}
+.facts div:first-child{border-left:0;padding-left:0}
+.facts b{display:block;white-space:nowrap;font-family:var(--disp);font-weight:800;font-size:clamp(30px,4.2vw,64px);line-height:1;letter-spacing:-.04em}
+.facts span{display:block;margin-top:8px;font-size:15px;color:var(--gray)}
+
+/* casa */
+.casa{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,6vw,100px);align-items:center;padding:clamp(70px,11vw,170px) var(--gut)}
+.casa__pics{position:relative;aspect-ratio:1/1.05}
+.casa__pics .card--c{inset:0 22% 14% 0;transform:rotate(-2.5deg)}
+.casa__pics .card--d{width:46%;aspect-ratio:9/15;right:0;bottom:0;transform:rotate(4deg);border:6px solid var(--bg)}
+.casa blockquote{font-family:var(--disp);font-weight:800;font-size:clamp(25px,3.2vw,50px);line-height:1.04;letter-spacing:-.035em;margin:16px 0 22px}
+.casa blockquote em{font-style:normal;color:var(--teal)}
+.casa p{max-width:46ch;color:#3a3936}
+.crew{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.crew a{padding:8px 14px;border:2px solid var(--ink);border-radius:999px;font-size:14.5px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.crew a:hover{background:var(--ink);color:#fff}
+
+/* trabalhos */
+.works{padding:0 var(--gut) clamp(70px,10vw,150px)}
+.works__head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:clamp(26px,4vw,56px)}
+.works h2,.rev h2,.quote h2{font-family:var(--disp);font-weight:800;font-size:clamp(44px,7.4vw,124px);line-height:.92;letter-spacing:-.045em}
+.wall{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,2vw,30px);align-items:start}
+.work{position:relative}
+.work .ph{border-radius:var(--r);overflow:hidden;background:#ccc}
+.work .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.work:hover .ph img{transform:scale(1.05)}
+.work figcaption{padding:14px 4px 0;display:grid;gap:6px}
+.work figcaption a{font-weight:600;font-size:14.5px;text-decoration:none;justify-self:start;padding:5px 12px;border-radius:999px;background:var(--ink);color:#fff}
+.work:nth-child(3n+1) figcaption a{background:var(--teal)}
+.work:nth-child(3n+2) figcaption a{background:var(--pink)}
+.work figcaption q{font-size:16px;font-style:italic;quotes:"“" "”";max-width:36ch}
+.w1{grid-column:1 / span 4}.w1 .ph{aspect-ratio:3/4}
+.w2{grid-column:5 / span 5;margin-top:clamp(20px,5vw,80px)}.w2 .ph{aspect-ratio:1/1}
+.w3{grid-column:10 / span 3}.w3 .ph{aspect-ratio:9/15}
+.w4{grid-column:2 / span 5}.w4 .ph{aspect-ratio:1/1}
+.w5{grid-column:7 / span 3;margin-top:clamp(20px,5vw,80px)}.w5 .ph{aspect-ratio:3/4}
+.w6{grid-column:10 / span 3;margin-top:clamp(-60px,-3vw,-20px)}.w6 .ph{aspect-ratio:3/4}
+
+/* escola */
+.escola{background:var(--teal);color:#fff;padding:clamp(70px,10vw,150px) var(--gut);border-radius:clamp(26px,4vw,60px) clamp(26px,4vw,60px) 0 0}
+.escola__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(26px,6vw,100px);align-items:start}
+.sheet{position:sticky;top:calc(var(--strip) + 26px);background:var(--skin);color:var(--ink);border-radius:var(--r);padding:clamp(16px,2vw,26px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);transform:rotate(-1.6deg)}
+.sheet__top{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding-bottom:10px;border-bottom:2px dashed rgba(22,22,22,.35)}
+.sheet__top output{font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:-.02em;text-transform:none}
+.sheet svg{display:block;width:100%;height:auto;max-height:calc(100svh - var(--strip) - 150px)}
+.sheet svg text{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.14em;fill:#161616}
+.escola h2{font-family:var(--disp);font-weight:800;font-size:clamp(40px,6.2vw,104px);line-height:.92;letter-spacing:-.045em;margin:14px 0 22px}
+.escola h2 em{font-style:normal;color:var(--skin)}
+.escola__lede{font-size:clamp(17px,1.5vw,21px);max-width:46ch}
+.grade{margin:clamp(26px,3.4vw,46px) 0;border-top:2px solid rgba(255,255,255,.5)}
+.grade li{display:grid;grid-template-columns:minmax(74px,auto) 1fr;gap:18px;align-items:baseline;padding:16px 0;border-bottom:2px solid rgba(255,255,255,.28);font-size:clamp(16px,1.4vw,19px)}
+.grade b{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3vw,44px);line-height:1;letter-spacing:-.04em;color:var(--skin)}
+.escola__cta{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.escola__cta small{font-size:14.5px;opacity:.9}
+.escola__cta small a{font-weight:600}
+.mestre{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(18px,3vw,44px);align-items:center;margin-top:clamp(40px,6vw,80px)}
+.mestre .ph{border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;transform:rotate(2deg)}
+.mestre .ph img{width:100%;height:100%;object-fit:cover}
+.mestre blockquote{font-size:clamp(18px,1.7vw,24px);font-style:italic;line-height:1.4}
+.mestre cite{display:block;margin-top:12px;font-style:normal;font-weight:600;font-size:14.5px}
+
+/* avaliações */
+.rev{padding:clamp(70px,10vw,150px) var(--gut);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(26px,6vw,100px);align-items:start}
+.rev h2 small{display:block;font-family:var(--body);font-weight:600;font-size:15px;letter-spacing:0;margin-top:14px;color:var(--gray)}
+.rev h2 small a{color:var(--teal)}
+.stars{color:var(--pink);font-size:22px;letter-spacing:.14em;margin-top:8px}
+.rv{background:#fff;border-radius:var(--r);padding:clamp(20px,2.4vw,34px);margin-bottom:14px}
+.rv:nth-child(2){margin-left:clamp(0px,4vw,60px);background:var(--ink);color:#fff}
+.rv blockquote{font-size:clamp(17px,1.5vw,21px);line-height:1.45}
+.rv cite{display:block;margin-top:12px;font-style:normal;font-weight:600;font-size:14.5px;opacity:.75}
+
+/* orçamento */
+.quote{background:var(--ink);color:#fff;padding:clamp(60px,9vw,130px) var(--gut);border-radius:clamp(26px,4vw,60px)}
+.quote h2 em{font-style:normal;color:var(--pink)}
+.quote > p{max-width:50ch;margin:18px 0 clamp(28px,4vw,54px);color:#cfcdc7}
+.form{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4.4fr);gap:clamp(24px,5vw,80px);align-items:start}
+.q{padding:20px 0;border-top:2px solid rgba(255,255,255,.2)}
+.q > span,.q > label{display:block;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;color:#cfcdc7}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:block;padding:10px 16px;border:2px solid rgba(255,255,255,.35);border-radius:999px;font-size:15.5px;font-weight:600;line-height:1.2;transition:background .2s,color .2s,border-color .2s}
+.opts label:hover span{border-color:#fff}
+.opts input:checked + span{background:#fff;color:var(--ink);border-color:#fff}
+.opts input:focus-visible + span{outline:2px solid var(--pink);outline-offset:2px}
+.q textarea{width:100%;min-height:86px;resize:vertical;border:2px solid rgba(255,255,255,.35);border-radius:16px;background:none;font:400 16px/1.5 var(--body);color:#fff;padding:12px 16px;outline:none}
+.q textarea::placeholder{color:#8f8d88}
+.q textarea:focus{border-color:#fff}
+.bubble{position:sticky;top:calc(var(--strip) + 24px);background:#e7ffdb;color:#111;border-radius:6px 22px 22px 22px;padding:20px 22px 22px}
+.bubble pre{margin:10px 0 18px;font:400 15.5px/1.55 var(--body);white-space:pre-wrap;word-break:break-word;min-height:120px}
+.bubble .pill{width:100%;justify-content:space-between}
+.bubble small{display:block;margin-top:12px;font-size:13px;color:#4b5a46}
+
+.foot{padding:clamp(46px,6vw,90px) var(--gut) 34px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+.foot .tag{display:block;margin-bottom:8px;color:var(--gray)}
+.foot p,.foot a{font-size:16.5px;text-decoration:none}
+.foot a:hover{color:var(--teal)}
+.foot__k{grid-column:1 / -1;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:20px;border-top:2px solid var(--ink);font-size:13px;color:var(--gray)}
+.fab{position:fixed;right:12px;bottom:12px;z-index:80;display:none;transform:translateY(90px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.fab.on{transform:none}
+
+@media (max-width:759px){
+  body{font-size:16px}
+  .kodra{justify-content:center;font-size:10px;letter-spacing:.05em}
+  .kodra a{display:none}
+  .nav a:not(.pill){display:none}
+  .hero{grid-template-columns:1fr;padding-top:8px}
+  .hero h1{font-size:13.6vw}
+  .works h2,.rev h2,.quote h2{font-size:9.6vw}
+  .escola h2{font-size:10vw}
+  .collage{max-height:none;width:92%;justify-self:center;margin-top:10px}
+  .sticker{font-size:13px;right:-4%}
+  .facts{grid-template-columns:1fr}
+  .facts div{border-left:0;border-top:2px solid var(--ink);padding:16px 0}
+  .facts div:first-child{border-top:0}
+  .facts b{font-size:11vw}
+  .casa{grid-template-columns:1fr}
+  .casa__pics{width:92%}
+  .works__head{flex-direction:column;align-items:flex-start}
+  .wall{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .work{grid-column:auto !important;margin-top:0 !important}
+  .w2,.w5{margin-top:36px !important}
+  .work figcaption q{font-size:14.5px}
+  .escola__grid{grid-template-columns:1fr}
+  .sheet{position:relative;top:0;max-width:440px}
+  .mestre{grid-template-columns:1fr}
+  .mestre .ph{width:60%}
+  .rev{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .bubble{position:static}
+  .foot{grid-template-columns:1fr 1fr}
+  .fab{display:inline-flex}
+}
+</style>
+</head>
+<body>
+<div class="kodra"><span>Prévia criada pela Kodra para SouArt Studio</span><a href="https://kodratecnologia.com.br" target="_blank" rel="noopener">kodratecnologia.com.br ↗</a></div>
+
+<header class="top">
+  <a class="logo" href="#topo">sou<i>art</i></a>
+  <nav class="nav" aria-label="Seções">
+    <a href="#casa">Estúdio</a><a href="#trabalhos">Trabalhos</a><a href="#escola">Curso</a><a href="#avaliacoes">Avaliações</a>
+    <a class="pill pill--pink" href="#orcamento">Orçamento rápido</a>
+  </nav>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div>
+      <h1 aria-label="Sou tatuagem, sou piercing, sou escola. Sou Art."><span class="sou" aria-hidden="true">Sou</span><span class="swap" aria-hidden="true"><span>tattoo.</span><span>piercing.</span><span>escola.</span><span>Art.</span></span></h1>
+      <p class="hero__lede" data-up>Estúdio de tatuagem e piercing no Centro de Juiz de Fora, com curso presencial de tatuagem pela Sou Art Academy.</p>
+      <div class="hero__cta" data-up>
+        <a class="pill" href="#orcamento">Orçamento rápido <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pill pill--ghost" href="#escola">Quero aprender a tatuar</a>
+      </div>
+    </div>
+    <div class="collage">
+      <span class="sticker" data-pop>“Mais um sábado<br>por aqui!” 🔥</span>
+      <figure class="card card--a" data-float="-6"><img src="img/sabado.webp" width="720" height="1280" alt="Tatuador de máscara trabalhando no SouArt, com o mural colorido do estúdio ao fundo" fetchpriority="high"></figure>
+      <figure class="card card--b" data-float="10"><img src="img/estudio.webp" width="960" height="1280" alt="Sessão de tatuagem no estúdio, com ring light e mural na parede" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div data-up><b>5,0</b><span>no Google, com 83 avaliações</span></div>
+    <div data-up><b>+180</b><span>alunos formados no curso de tatuagem</span></div>
+    <div data-up><b>quase 5</b><span>anos de Sou Art em Juiz de Fora</span></div>
+  </div>
+
+  <section class="casa" id="casa">
+    <div class="casa__pics">
+      <figure class="card card--c" data-float="-8"><img src="img/navi.webp" width="720" height="1280" loading="lazy" alt="Tatuadora de máscara preta tatuando um desenho em linhas"></figure>
+      <figure class="card card--d" data-float="12"><img src="img/cobe.webp" width="960" height="1280" loading="lazy" alt="Tatuador de costas na bancada amarela do estúdio, sob o ring light"></figure>
+    </div>
+    <div>
+      <span class="tag" data-up>O estúdio</span>
+      <blockquote data-up>“Tatuagem, troca e aprendizado acontecendo <em>ao mesmo tempo.</em> É assim que a gente vive a tattoo por aqui.”</blockquote>
+      <p data-up>Fine line, freehand, old school autoral, realismo, pontilhismo e piercing, cada um com seu artista. Quem tatua por aqui:</p>
+      <div class="crew" data-up>
+        <a href="https://www.instagram.com/cobetattooart/" target="_blank" rel="noopener">@cobetattooart</a>
+        <a href="https://www.instagram.com/vtortattoo/" target="_blank" rel="noopener">@vtortattoo</a>
+        <a href="https://www.instagram.com/valdeirfreitass/" target="_blank" rel="noopener">@valdeirfreitass</a>
+        <a href="https://www.instagram.com/lourestattooarte/" target="_blank" rel="noopener">@lourestattooarte</a>
+        <a href="https://www.instagram.com/louislenetattoo/" target="_blank" rel="noopener">@louislenetattoo</a>
+        <a href="https://www.instagram.com/esthervianatattoo/" target="_blank" rel="noopener">@esthervianatattoo</a>
+        <a href="https://www.instagram.com/daluartsink/" target="_blank" rel="noopener">@daluartsink</a>
+        <a href="https://www.instagram.com/navitattoos/" target="_blank" rel="noopener">@navitattoos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="works" id="trabalhos">
+    <div class="works__head"><h2 data-up>Trabalhos</h2><a class="pill pill--ghost" href="https://www.instagram.com/souartstudio/" target="_blank" rel="noopener">@souartstudio ↗</a></div>
+    <div class="wall">
+      <figure class="work w1" data-up><div class="ph"><img src="img/floral.webp" width="960" height="1280" loading="lazy" alt="Ramo floral em fine line no antebraço"></div><figcaption><a href="https://www.instagram.com/vtortattoo/" target="_blank" rel="noopener">@vtortattoo</a><q>Floral</q></figcaption></figure>
+      <figure class="work w2" data-up><div class="ph"><img src="img/projeto.webp" width="1262" height="1280" loading="lazy" alt="Peônia em preto e cinza descendo do antebraço até a mão"></div><figcaption><a href="https://www.instagram.com/cobetattooart/" target="_blank" rel="noopener">@cobetattooart</a><q>Uma tattoo não precisa ser só bem feita, ela precisa acompanhar a anatomia do corpo e envelhecer bem.</q></figcaption></figure>
+      <figure class="work w3" data-up><div class="ph"><img src="img/oldschool.webp" width="640" height="1136" loading="lazy" alt="Rosto feminino em old school no pescoço"></div><figcaption><a href="https://www.instagram.com/vtortattoo/" target="_blank" rel="noopener">@vtortattoo</a><q>Oldschool autoral. O que acharam?</q></figcaption></figure>
+      <figure class="work w4" data-up><div class="ph"><img src="img/beijaflor.webp" width="1170" height="1227" loading="lazy" alt="Beija-flor em aquarela roxa sobre flor em preto e cinza"></div><figcaption><a href="https://www.instagram.com/lourestattooarte/" target="_blank" rel="noopener">@lourestattooarte</a><q>Um trabalho pensado em cada detalhe para transformar significado em arte.</q></figcaption></figure>
+      <figure class="work w5" data-up><div class="ph"><img src="img/costas.webp" width="960" height="1280" loading="lazy" alt="Onça com flores e escrita descendo pela coluna"></div><figcaption><a href="https://www.instagram.com/louislenetattoo/" target="_blank" rel="noopener">@louislenetattoo</a><q>Aquela tattoo que você vive dizendo “um dia eu faço” pode ser a próxima.</q></figcaption></figure>
+      <figure class="work w6" data-up><div class="ph"><img src="img/flash.webp" width="960" height="1280" loading="lazy" alt="Dois ratinhos em pontilhismo na panturrilha"></div><figcaption><a href="https://www.instagram.com/valdeirfreitass/" target="_blank" rel="noopener">@valdeirfreitass</a><q>Flash</q></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="escola" id="escola">
+    <div class="escola__grid">
+      <div class="sheet" id="sheet" aria-hidden="true">
+        <div class="sheet__top"><span>Pele de treino</span><output id="aula">aula 01</output></div>
+        <svg viewBox="0 0 400 470" id="treino">
+          <defs>
+            <clipPath id="gota"><path d="M200 196c34 40 52 62 52 86a52 52 0 0 1-104 0c0-24 18-46 52-86z"/></clipPath>
+            <linearGradient id="deg" x1="0" x2="1" y1="0" y2="0"><stop id="s0" offset="0" stop-color="#161616" stop-opacity=".96"/><stop id="s1" offset=".02" stop-color="#161616" stop-opacity="0"/></linearGradient>
+            <pattern id="pts" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r=".9" fill="#161616"/><circle cx="4.5" cy="4.5" r=".9" fill="#161616"/></pattern>
+            <mask id="degm"><rect x="40" y="372" width="320" height="64" fill="url(#degw)"/></mask>
+            <linearGradient id="degw" x1="0" x2="1"><stop id="w0" offset="0" stop-color="#fff"/><stop id="w1" offset=".04" stop-color="#000"/></linearGradient>
+          </defs>
+          <text x="40" y="34">01 — LINHA</text>
+          <path id="l1" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round"/>
+          <path id="l2" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round"/>
+          <path id="l3" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round"/>
+          <text x="40" y="184">02 — PREENCHIMENTO</text>
+          <g clip-path="url(#gota)"><path id="hatch" fill="none" stroke="#161616" stroke-width="7.5" stroke-linecap="square"/></g>
+          <path d="M200 196c34 40 52 62 52 86a52 52 0 0 1-104 0c0-24 18-46 52-86z" fill="none" stroke="#161616" stroke-width="2.6" id="gotal"/>
+          <text x="40" y="360">03 — SOMBRA</text>
+          <rect x="40" y="372" width="320" height="64" fill="url(#deg)"/>
+          <rect x="40" y="372" width="320" height="64" fill="url(#pts)" mask="url(#degm)" opacity=".8"/>
+          <rect x="40" y="372" width="320" height="64" fill="none" stroke="#161616" stroke-width="2.6"/>
+        </svg>
+      </div>
+      <div>
+        <span class="tag">Sou Art Academy · curso presencial</span>
+        <h2>Aprenda do zero e <em>viva de tatuagem.</em></h2>
+        <p class="escola__lede">“Cada tatuador que você admira já foi iniciante.” No curso de tatuagem da Sou Art você treina linha, preenchimento e sombra até o traço sair firme, com acompanhamento personalizado nas práticas.</p>
+        <ul class="grade">
+          <li><b>3</b><span>meses intensivos de curso presencial</span></li>
+          <li><b>25+</b><span>aulas práticas e teóricas</span></li>
+          <li><b>✓</b><span>acesso direto a um tatuador experiente, e como se destacar e vender seu trabalho na internet</span></li>
+          <li><b>✓</b><span>certificado de conclusão e mentoria pós-curso para começar a cobrar pelas suas tatuagens</span></li>
+        </ul>
+        <div class="escola__cta">
+          <a class="pill pill--white" id="inscricao" href="https://wa.me/5532998604046?text=Oi!%20Quero%20me%20inscrever%20no%20curso%20de%20tatuagem%20da%20Sou%20Art.%20Pode%20me%20passar%20as%20informa%C3%A7%C3%B5es%20da%20pr%C3%B3xima%20turma%3F" target="_blank" rel="noopener">Quero me inscrever <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <small>Vagas limitadas. Também tem <a href="https://wa.me/5532998604046?text=Oi!%20Quero%20saber%20do%20curso%20de%20piercing%20profissional%20da%20Sou%20Art." target="_blank" rel="noopener">curso de piercing profissional</a>.</small>
+        </div>
+        <div class="mestre">
+          <div class="ph"><img src="img/escola.webp" width="960" height="1280" loading="lazy" alt="Duas alunas treinando tatuagem lado a lado na bancada"></div>
+          <div>
+            <blockquote>“Ter uma equipe, trocar conhecimento e ver outras pessoas crescendo ao meu lado foi um dos sonhos que a tatuagem me permitiu realizar.”</blockquote>
+            <cite>Cobe, quase 10 anos tatuando · @cobetattooart</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rev" id="avaliacoes">
+    <h2 data-up>5,0<div class="stars" aria-hidden="true">★★★★★</div><small>83 avaliações no Google · <a href="https://www.google.com/maps/search/?api=1&query=SouArt+Studio+Juiz+de+Fora" target="_blank" rel="noopener">ver todas ↗</a></small></h2>
+    <div>
+      <article class="rv" data-up><blockquote>“Melhor lugar pra aprender sobre tattoo, ótimos tatuadores, e trabalhos incríveis!!”</blockquote><cite>Guilherme Martins</cite></article>
+      <article class="rv" data-up><blockquote>“[…] me senti muito bem recebida e confortável no ambiente. Com toda certeza vou voltar mais vezes e indico muito, pois amo minhas tatuagens que foram feitas lá.”</blockquote><cite>Camilly Miuki Yamanaka</cite></article>
+      <article class="rv" data-up><blockquote>“Passando para agradecer pelo trabalho incrível realizado!”</blockquote><cite>Douglas Felix</cite></article>
+    </div>
+  </section>
+
+  <section class="quote" id="orcamento">
+    <h2>Orçamento <em>rápido.</em></h2>
+    <p>Aquela ideia que tá guardada há meses pode finalmente sair do papel. Marca o estilo, o lugar e o tamanho, e a mensagem já vai pronta pro nosso WhatsApp.</p>
+    <form class="form" id="form" novalidate>
+      <div>
+        <div class="q"><span>Estilo</span>
+          <div class="opts" role="radiogroup" aria-label="Estilo">
+            <label><input type="radio" name="estilo" value="Fine line" checked><span>Fine line</span></label>
+            <label><input type="radio" name="estilo" value="Old school"><span>Old school</span></label>
+            <label><input type="radio" name="estilo" value="Realismo"><span>Realismo</span></label>
+            <label><input type="radio" name="estilo" value="Floral"><span>Floral</span></label>
+            <label><input type="radio" name="estilo" value="Freehand"><span>Freehand</span></label>
+            <label><input type="radio" name="estilo" value="Ainda não sei"><span>Ainda não sei</span></label>
+          </div>
+        </div>
+        <div class="q"><span>Local do corpo</span>
+          <div class="opts" role="radiogroup" aria-label="Local do corpo">
+            <label><input type="radio" name="local" value="Braço" checked><span>Braço</span></label>
+            <label><input type="radio" name="local" value="Antebraço"><span>Antebraço</span></label>
+            <label><input type="radio" name="local" value="Mão"><span>Mão</span></label>
+            <label><input type="radio" name="local" value="Pescoço"><span>Pescoço</span></label>
+            <label><input type="radio" name="local" value="Costas"><span>Costas</span></label>
+            <label><input type="radio" name="local" value="Perna"><span>Perna</span></label>
+            <label><input type="radio" name="local" value="Outro lugar"><span>Outro lugar</span></label>
+          </div>
+        </div>
+        <div class="q"><span>Tamanho</span>
+          <div class="opts" role="radiogroup" aria-label="Tamanho">
+            <label><input type="radio" name="tam" value="Pequena (até 8 cm)" checked><span>Pequena · até 8 cm</span></label>
+            <label><input type="radio" name="tam" value="Média (8 a 15 cm)"><span>Média · 8 a 15 cm</span></label>
+            <label><input type="radio" name="tam" value="Grande (mais de 15 cm)"><span>Grande · mais de 15 cm</span></label>
+          </div>
+        </div>
+        <div class="q"><label for="ideia">Sua ideia (opcional)</label>
+          <textarea id="ideia" placeholder="Conta o que você tem em mente…"></textarea>
+        </div>
+      </div>
+      <aside class="bubble">
+        <span class="tag">Sua mensagem</span>
+        <pre id="msg" aria-live="polite"></pre>
+        <a class="pill" id="send" href="https://wa.me/5532998604046" target="_blank" rel="noopener">Enviar no WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <small>Abre o atendimento do SouArt Studio — (32) 99860-4046.</small>
+      </aside>
+    </form>
+  </section>
+</main>
+
+<footer class="foot">
+  <div><span class="tag">Estúdio</span><p>Av. Francisco Bernardino, 165, sala 601<br>Santa Cruz Shopping · Centro<br>Juiz de Fora/MG</p></div>
+  <div><span class="tag">Horário</span><p>Segunda a sexta, 10h às 18h<br>Sábado, 10h às 13h</p></div>
+  <div><span class="tag">Contato</span><p><a href="https://wa.me/5532998604046" target="_blank" rel="noopener">(32) 99860-4046</a><br><a href="https://www.instagram.com/souartstudio/" target="_blank" rel="noopener">@souartstudio</a><br><a href="https://www.instagram.com/souart.academy/" target="_blank" rel="noopener">@souart.academy</a></p></div>
+  <div><span class="tag">Mapa</span><p><a href="https://www.google.com/maps/search/?api=1&query=SouArt+Studio+Juiz+de+Fora" target="_blank" rel="noopener">Abrir no Google Maps ↗</a></p></div>
+  <div class="foot__k"><span>Fotos e textos: Instagram @souartstudio, @souart.academy e artistas do estúdio. Avaliações e horário: Google.</span><span>Prévia criada pela <a href="https://kodratecnologia.com.br" target="_blank" rel="noopener">Kodra</a></span></div>
+</footer>
+<a class="pill pill--pink fab" id="fab" href="#orcamento">Orçamento rápido</a>
+
+<script src="assets/gsap.min.js"></script>
+<script src="assets/ScrollTrigger.min.js"></script>
+<script src="assets/lenis.min.js"></script>
+<script>
+(function(){
+  var W='5532998604046';
+  var form=document.getElementById('form'),msg=document.getElementById('msg'),send=document.getElementById('send'),ideia=document.getElementById('ideia');
+  function val(n){var el=form.querySelector('input[name="'+n+'"]:checked');return el?el.value:''}
+  function update(){
+    var lines=['Oi! Vi o site do SouArt e quero um orçamento.','','Estilo: '+val('estilo'),'Local do corpo: '+val('local'),'Tamanho: '+val('tam')];
+    if(ideia.value.trim()) lines.push('Ideia: '+ideia.value.trim());
+    var t=lines.join('\n');msg.textContent=t;send.href='https://wa.me/'+W+'?text='+encodeURIComponent(t);
+  }
+  form.addEventListener('input',update);form.addEventListener('change',update);form.addEventListener('submit',function(e){e.preventDefault()});update();
+
+  /* pele de treino: desenha os três exercícios para um progresso p (0 = primeira aula, 1 = traço firme) */
+  function rnd(seed){var s=seed;return function(){s=(s*16807)%2147483647;return s/2147483647-.5}}
+  function noise(n,seed){var r=rnd(seed),a=[],v=0;for(var i=0;i<n;i++){v=v*.55+r()*1.6;a.push(v)}return a}
+  var N=40,n1=noise(N+1,7),n2=noise(N+1,91),n3=noise(N+1,333),hz=noise(60,55);
+  var l1=document.getElementById('l1'),l2=document.getElementById('l2'),l3=document.getElementById('l3'),hatch=document.getElementById('hatch'),
+      s1=document.getElementById('s1'),w1=document.getElementById('w1'),aula=document.getElementById('aula');
+  function line(el,fn,nz,amp){var d='';for(var i=0;i<=N;i++){var t=i/N,p=fn(t);d+=(i?'L':'M')+(p[0]+nz[(i*7)%nz.length]*amp*.35).toFixed(1)+' '+(p[1]+nz[i]*amp).toFixed(1)}el.setAttribute('d',d)}
+  function draw(p){
+    var a=Math.max(0,1-p/.45), amp=a*13;
+    line(l1,function(t){return [40+320*t,62]},n1,amp);
+    line(l2,function(t){return [40+320*t,104+Math.sin(t*Math.PI*4)*13]},n2,amp);
+    line(l3,function(t){return [40+320*t,146-Math.sin(t*Math.PI)*16]},n3,amp*.9);
+    var f=Math.min(1,Math.max(0,(p-.25)/.45)),rows=22,d='',wob=(1-f)*5;
+    var upto=f*rows;
+    for(var r=0;r<Math.ceil(upto);r++){var y=198+r*7.4,part=Math.min(1,upto-r),x0=140,x1=140+120*part;if(r%2){d+='M'+(260)+' '+(y+hz[r]*wob).toFixed(1)+'L'+(260-120*part).toFixed(1)+' '+(y+hz[r+20]*wob).toFixed(1)}else{d+='M'+x0+' '+(y+hz[r]*wob).toFixed(1)+'L'+x1.toFixed(1)+' '+(y+hz[r+20]*wob).toFixed(1)}}
+    hatch.setAttribute('d',d||'M0 0');
+    var g=Math.min(1,Math.max(0,(p-.55)/.45));
+    s1.setAttribute('offset',(.02+g*.5).toFixed(3));w1.setAttribute('offset',(.04+g*.96).toFixed(3));
+    aula.textContent='aula '+('0'+Math.max(1,Math.round(1+p*24))).slice(-2)+(p>=.995?'+':'');
+  }
+
+  var fab=document.getElementById('fab');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!window.gsap||!window.ScrollTrigger||reduce){draw(1);fab.classList.add('on');document.querySelectorAll('.swap span').forEach(function(s,i,a){if(i<a.length-1)s.style.display='none'});return}
+  draw(0);
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ignoreMobileResize:true});
+  var lenis=null;
+  if(window.Lenis){lenis=new Lenis({lerp:.1});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0)}
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var el=document.querySelector(a.getAttribute('href'));if(!el)return;e.preventDefault();if(lenis)lenis.scrollTo(el,{offset:-34,duration:1.4});else window.scrollTo({top:el.getBoundingClientRect().top+scrollY-34,behavior:'smooth'})})});
+
+  /* Sou ____. — ajusta o corpo para a palavra mais larga caber na coluna */
+  var words=gsap.utils.toArray('.swap span'),h1=document.querySelector('.hero h1');
+  function fit(){h1.style.fontSize='';var box=h1.parentNode.clientWidth,fs=parseFloat(getComputedStyle(h1).fontSize),w=0;words.forEach(function(s){w=Math.max(w,s.scrollWidth)});if(w>0){var cap=window.innerWidth<760?200:Math.min(190,window.innerHeight*.26);h1.style.fontSize=Math.min(cap,fs*box/w*.985)+'px'}}
+  fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  gsap.set(words,{yPercent:110});
+  var sw=gsap.timeline({repeat:-1,delay:.3});
+  words.forEach(function(w,i){
+    sw.to(w,{yPercent:0,duration:.5,ease:'power3.out'})
+      .to(w,{yPercent:-110,duration:.38,ease:'power3.in'},'+='+(i===words.length-1?3:1.5))
+      .set(w,{yPercent:110});
+  });
+  gsap.from('.hero .sou',{yPercent:40,opacity:0,duration:.8,ease:'power3.out'});
+  gsap.from('.card--a',{y:60,opacity:0,rotate:8,duration:1.1,ease:'power3.out',delay:.15});
+  gsap.from('.card--b',{y:80,opacity:0,rotate:-14,duration:1.1,ease:'power3.out',delay:.35});
+  gsap.from('[data-pop]',{scale:0,rotate:-20,duration:.7,ease:'back.out(2)',delay:.9});
+
+  gsap.utils.toArray('[data-float]').forEach(function(el){
+    gsap.to(el,{yPercent:+el.dataset.float,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  gsap.utils.toArray('[data-up]').forEach(function(el){
+    gsap.fromTo(el,{opacity:0,y:36},{opacity:1,y:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 93%',once:true}});
+  });
+
+  /* treino guiado pelo scroll */
+  var st={p:0},mm=gsap.matchMedia();
+  mm.add('(min-width:760px)',function(){
+    gsap.to(st,{p:1,ease:'none',onUpdate:function(){draw(st.p)},scrollTrigger:{trigger:'.escola__grid',start:'top 55%',end:'bottom 85%',scrub:.5}});
+  });
+  mm.add('(max-width:759px)',function(){
+    gsap.to(st,{p:1,ease:'none',onUpdate:function(){draw(st.p)},scrollTrigger:{trigger:'#sheet',start:'top 78%',end:'bottom 42%',scrub:.5}});
+  });
+
+  ScrollTrigger.create({trigger:'.casa',start:'top 60%',endTrigger:'#orcamento',end:'top 75%',onToggle:function(s){fab.classList.toggle('on',s.isActive)}});
+  window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
